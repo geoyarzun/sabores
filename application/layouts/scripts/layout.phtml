@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//ES" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>saboresdelapatagonia</title>
+<link rel="stylesheet" type="text/css" href="css/reset-fonts-grids.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
+
+<script>
+  $(function() {
+    $( "#menu" ).menu();
+  });
+  </script>
+<style>
+    .ui-menu { 
+        width:max-content;
+        margin-top: 10px;
+    }
+    #logo{
+        float: left;
+    }
+    #banner{
+        float: right;
+    }
+    #doc3 .yui-t2{
+        background-color: #000;
+    }
+</style>
+
+</head>
+<body>
+<div id="doc3" class="yui-t2">
+    
+	<div id="hd">
+<!--		 PUT MASTHEAD CODE HERE -->
+            <div id="logo">
+                <img src="img/sitio/cabecera.png" width="681" height="92"/>              
+            </div>
+
+            <div id="banner">        
+                <?php echo $this->htmlFlash($this->baseUrl('/flash/banner.swf'),
+                array('width' => 560, 'height' => 92)
+                );
+                ?>
+            </div> 
+        </div>
+	<div id="bd">		
+		<div class="yui-b">                   
+                    <div id="col-left">                                                            
+                            <ul id="menu">
+                                    <li class="ui-state-disabled"><a href="#">Inicio</a></li>
+                                    <li>
+                                        <a href="#">Chef Leonardo Chacón</a>
+                                        <ul>
+                                            <li><a href="#">Publicaciones</a></li>
+                                            <li><a href="#">Labor Asesora</a></li>
+                                            <li><a href="#">Chef Ejecutivo</a></li>
+                                            <li><a href="#">Eventos</a></li>
+                                            <li><a href="#">Asesorías</a></li>
+                                            <li><a href="#">Labor Docente</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#">Consultores gastron&oacute;micos</a></li>
+                                    <li><a href="#">Gastronoticias</a></li>
+                                    <li><a href="#">Consultores Gastronómicos</a></li>
+                                    <li><a href="#">Productos</a></li>
+                                    <li><a href="#">Cocina Regional Chilena</a></li>
+                                    <li><a href="#">Nuestros Clientes</a></li>
+                                    <li><a href="#">Recetario</a></li>
+                                    <li><a href="#">Cocinero Invitado</a></li>
+                                    <li><a href="#">Patagonia&AMP;Chefs</a></li>
+                                    <li><a href="#">Links de Interés</a></li>
+                                    <li><a href="#">Contacto</a></li>
+                                    
+                                    <li>
+                                        <a href="#">Delphi</a>
+                                            <ul>
+                                                <li class="ui-state-disabled"><a href="#">Ada</a></li>
+                                                <li><a href="#">Saarland</a></li>
+                                                <li><a href="#">Salzburg</a></li>
+                                            </ul>
+                                    </li>
+                                    <li><a href="#">Saarland</a></li>
+                                    <li>
+                                        <a href="#">Salzburg</a>
+                                        <ul>
+                                        <li>
+                                            <a href="#">Delphi</a>
+                                            <ul>
+                                            <li><a href="#">Ada</a></li>
+                                            <li><a href="#">Saarland</a></li>
+                                            <li><a href="#">Salzburg</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Delphi</a>
+                                            <ul>
+                                            <li><a href="#">Ada</a></li>
+                                            <li><a href="#">Saarland</a></li>
+                                            <li><a href="#">Salzburg</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Perch</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="ui-state-disabled"><a href="#">Amesville</a></li>
+                            
+                            </ul>       
+                        <div id="contenedor-ayudante">
+                            <div id="ayudante">                                
+                                Chef Asesor Ximena Hidalgo Técnico en Cocina Internacional
+                            </div>
+                        </div>
+                    </div>                        
+		</div>
+            
+            <div id="yui-main">
+			<div class="yui-b">
+                            <div class="yui-t7">
+<!--				 PUT MAIN COLUMN CODE HERE -->
+                                 <?php echo $this->layout()->content; ?>
+                            </div>
+			</div>
+		</div>
+	</div>
+	<div id="ft">
+		<!-- PUT FOOTER CODE HERE -->
+	</div>
+</div>
+</body>
+</html>
+
+                            
+                            
+                            
