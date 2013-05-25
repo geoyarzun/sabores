@@ -9,6 +9,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 //               'basePath' => APPLICATION_PATH)); 
 //          return $moduleLoader; 
 //     } 
+    
+    public function _initNamespaces() {
+    $autoloader = Zend_Loader_Autoloader::getInstance();
+    $autoloader->registerNamespace("ZFImage_");
+    return;
+}
 
     protected function _initConfig()
     {
@@ -33,8 +39,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view = new Zend_View();
         $view->doctype('XHTML1_STRICT');
 
-        $view->setEncoding("iso-8859-1");
-		$view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=iso-8859-1');
+        $view->setEncoding("utf-8");
+		$view->headMeta()->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8');
 //		$view->headTitle(Zend_Registry::get('config')->parametros->titulo);
 
         // A�adir al ViewRenderer

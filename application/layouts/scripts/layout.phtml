@@ -5,144 +5,323 @@
 <meta name="keywords" content="">
 <meta name="description" content="">
 <title>saboresdelapatagonia</title>
-<link rel="stylesheet" type="text/css" href="css/reset-fonts-grids.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<!--  <link rel="stylesheet" href="/resources/demos/style.css" />-->
 
-<script>
-  $(function() {
-    $( "#menu" ).menu();
-  });
-  </script>
-<style>
-    .ui-menu { 
-        width:max-content;
-        margin-top: 10px;
-    }
-    #logo{
-        float: left;
-    }
-    #banner{
-        float: right;
-    }
-    #doc3 .yui-t2{
-        background-color: #000;
-    }
-</style>
+<?php //  $this->headLink()
+//            ->prependStylesheet($this->baseUrl().'/css/bootstrap.css','all')
+//            ->prependStylesheet($this->baseUrl().'/css/bootstrap-responsive.css','all')
+//            ->prependStylesheet($this->baseUrl().'/css/estilogeneral.css','all');
+        
+        
+        
+            $this->headScript()
+//            ->appendFile('http://localhost/sabores/public/js/bootstrap.js','text/javascript')
+            ->appendFile('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js','text/javascript');
+  
+?> 
+
+
+<?php echo $this->headScript() ?>
+<?php echo $this->headLink() ?>
+
+<link rel="stylesheet" type="text/css" href="http://localhost/sabores/public/css/bootstrap.css" media="all">
+<link rel="stylesheet" href="http://localhost/sabores/public/css/bootstrap-responsive.css" media="all">
+<link rel="stylesheet" href="http://localhost/sabores/public/css/estilogeneral.css" media="all">
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<script src="http://localhost/sabores/public/js/bootstrap.js"></script>
+
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+
+
+<script type="text/javascript" > 
+//$(document).ready(function(){ 
+//$('.dropdown-toggle').dropdown(); 
+//});
+</script> 
+
+
+
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>;-->
+<script type="text/javascript">
+ 
+    $(document).ready(function() {
+ 
+        // Store variables
+ 
+        var accordion_head = $('.accordion > li > a'),
+            accordion_body = $('.accordion li > .sub-menu');
+ 
+        // Open the first tab on load
+ 
+accordion_head.first().addClass('active').next().slideDown('normal');
+ 
+        // Click function
+ 
+        accordion_head.on('click', function(event) {
+ 
+            // Disable header links
+ 
+            event.preventDefault();
+ 
+            // Show and hide the tabs on click
+ 
+            if ($(this).attr('class') != 'active'){
+                accordion_body.slideUp('normal');
+                $(this).next().stop(true,true).slideToggle('normal');
+                accordion_head.removeClass('active');
+                $(this).addClass('active');
+            }
+ 
+        });
+ 
+    });
+ 
+</script>
+
+
+
+
 
 </head>
-<body>
-<div id="doc3" class="yui-t2">
-    
-	<div id="hd">
-<!--		 PUT MASTHEAD CODE HERE -->
-            <div id="logo">
-                <img src="img/sitio/cabecera.png" width="681" height="92"/>              
-            </div>
 
-            <div id="banner">        
-                <?php echo $this->htmlFlash($this->baseUrl('/flash/banner.swf'),
-                array('width' => 560, 'height' => 92)
+
+<body>
+    
+
+    
+<div class="container" id="general"> 
+<div id="encabezado"class="row"> 
+    <div class="span7" id="logo"><!--        <h3>LOGO DE MI EMPRESA</h3>--></div>
+    
+    <a href="<?php echo $this->baseUrl(); ?>"><img src="<?php echo $this->baseUrl().'/img/sitio/cabecera.png'?>" width="550" height="88" style="vertical-align: super"/></a>
+    
+    <div style="vertical-align: super; float: right">
+    <?php echo $this->htmlFlash($this->baseUrl('/flash/banner.swf'),
+                array('width' => 350, 'height' => 88,)
                 );
                 ?>
-            </div> 
-        </div>
-	<div id="bd">		
-		<div class="yui-b">                   
-                    <div id="col-left">                                                            
-                            <ul id="menu">
-                                    <li class="ui-state-disabled"><a href="#">Inicio</a></li>
-                                    <li>
-                                        <a href="#">Chef Leonardo Chacón</a>
-                                        <ul>
-                                            <li><a href="#">Publicaciones</a></li>
-                                            <li><a href="#">Labor Asesora</a></li>
-                                            <li><a href="#">Chef Ejecutivo</a></li>
-                                            <li><a href="#">Eventos</a></li>
-                                            <li><a href="#">Asesorías</a></li>
-                                            <li><a href="#">Labor Docente</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Consultores Gastronómicos</a>
-                                        <ul>
-                                            <li><a href="#">Asesorías</a></li>
-                                            <li><a href="#">Recreación Cocina Chilena</a></li>
-                                            <li><a href="#">Etapas</a></li>
-                                            <li><a href="#">Otras Áreas</a></li>
-                                            <li><a href="#">Servicios</a></li>
-                                        </ul>
-                                    </li>                                    
-                                    <li><a href="#">Gastronoticias</a></li>
-                                    <li><a href="#">Consultores Gastronómicos</a></li>
-                                    <li><a href="#">Productos</a></li>
-                                    <li><a href="#">Cocina Regional Chilena</a></li>
-                                    <li><a href="#">Nuestros Clientes</a></li>
-                                    <li><a href="#">Recetario</a></li>
-                                    <li><a href="#">Cocinero Invitado</a></li>
-                                    <li><a href="#">Patagonia&AMP;Chefs</a></li>
-                                    <li><a href="#">Links de Interés</a></li>
-                                    <li><a href="#">Contacto</a></li>
-                                    
-                                    <li>
-                                        <a href="#">Delphi</a>
-                                            <ul>
-                                                <li class="ui-state-disabled"><a href="#">Ada</a></li>
-                                                <li><a href="#">Saarland</a></li>
-                                                <li><a href="#">Salzburg</a></li>
-                                            </ul>
-                                    </li>
-                                    <li><a href="#">Saarland</a></li>
-                                    <li>
-                                        <a href="#">Salzburg</a>
-                                        <ul>
-                                        <li>
-                                            <a href="#">Delphi</a>
-                                            <ul>
-                                            <li><a href="#">Ada</a></li>
-                                            <li><a href="#">Saarland</a></li>
-                                            <li><a href="#">Salzburg</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Delphi</a>
-                                            <ul>
-                                            <li><a href="#">Ada</a></li>
-                                            <li><a href="#">Saarland</a></li>
-                                            <li><a href="#">Salzburg</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Perch</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="ui-state-disabled"><a href="#">Amesville</a></li>
-                            
-                            </ul>       
-                        <div id="contenedor-ayudante">
-                            <div id="ayudante">                                
-                                Chef Asesor Ximena Hidalgo Técnico en Cocina Internacional
-                            </div>
-                        </div>
-                    </div>                        
-		</div>
-            
-            <div id="yui-main">
-			<div class="yui-b">
-                            <div class="yui-t7">
-<!--				 PUT MAIN COLUMN CODE HERE -->
-                                 <?php echo $this->layout()->content; ?>
-                            </div>
-			</div>
-		</div>
-	</div>
-	<div id="ft">
-		<!-- PUT FOOTER CODE HERE -->
-	</div>
+    </div>
+    
+    <div id="menu" class="span8"> 
+    <ul class="nav nav-pills"> 
+    <li class="active" style="width:150px"><a href="#">Inicio</a></li> 
+    <li class="dropdown" id="menu1"> 
+    <a style='background:#CEECF5' class='dropdown-toggle' data-toggle='#fat' href='#menu1'> 
+    Nosotros 
+    <b class="caret"></b> 
+    </a> 
+    <ul class="dropdown-menu"> 
+    <li><a href="#">Misión</a></li> 
+    <li><a href="#">Visión</a></li> 
+    <li class="divider"></li> 
+    <li><a href="#">Staff</a></li> 
+    </ul> 
+    </li> 
+    <li class=""><a style="background:#CEECF5" href=”#”>Portafolio</a></li> 
+    <li class="" ><a href='<?php echo $this->baseUrl().'/contacto' ?>' style="background:#CEECF5">Contacto</a></li>
+    </ul> 
+    </div> 
+</div> 
+<div id="cuerpo" class="row"> 
+    
+<div id="izquierda" class="span4">    
+    <h3>Izquierda</h3> 
+
+
+
+
+
+<ul class="nav accordion nav-tabs nav-stacked ">
+ 
+    <li id="one" class="files"> 
+        <a href="#one">Chef&nbsp;Leonardo&nbsp;Chacón<span>06</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="<?php echo $this->baseUrl().'/chef-leonardo-chacon/publicaciones'; ?>"><em>01</em>Publicaciones<span></span></a></li>
+            <li><a href="#"><em>02</em>Labor&nbsp;Asesora<span></span></a></li>
+            <li><a href="#"><em>03</em>Chef&nbsp;Ejecutivo<span></span></a></li>
+            <li><a href="#"><em>04</em>Eventos<span></span></a></li>
+            <li><a href="#"><em>05</em>Asesorías<span></span></a></li>
+            <li><a href="#"><em>06</em>Labor&nbsp;Docente<span></span></a></li> 
+        </ul> 
+    </li>
+    
+    
+    
+<!--    <li id="three" class="files"> 
+        <a href="#three">Gastronoticias<span>30</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li> 
+        </ul> 
+    </li>-->
+    
+    
+ 
+    <li id="two" class="files"> 
+        <a href="#two">Consultores&nbsp;Gastronómicos<span>05</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="#"><em>01</em>Asesorías<span></span></a></li>
+            <li><a href="#"><em>02</em>Recreación&nbsp;Cocina&nbsp;Chilena<span>2</span></a></li>
+            <li><a href="#"><em>03</em>Etapas<span></span></a></li>
+            <li><a href="#"><em>04</em>Otras&nbsp;Áreas<span></span></a></li>
+            <li><a href="#"><em>05</em>Servicios<span></span></a></li>                        
+        </ul> 
+    </li>
+ 
+        
+    
+ 
+    <li id="four" class="files">
+        <a href="#three">Productos<span>04</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="#"><em>01</em>Pastelería<span></span></a></li>
+            <li><a href="#"><em>02</em>Jamón de Vacuno<span></span></a></li>
+            <li><a href="#"><em>03</em>Jamón de Cordero<span></span></a></li>
+            <li><a href="#"><em>04</em>Jamón de Ave<span></span></a></li>                         
+        </ul> 
+    </li>
+    
+    
+    <li id="five" class="files"> 
+        <a href="#three">Cocina&nbsp;Regional&nbsp;Chilena<span>02</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="#"><em>01</em>Soberanía Gastronómica<span></span></a></li>
+            <li><a href="#"><em>02</em>Historia del Cerdo<span></span></a></li> 
+        </ul> 
+    </li>
+    
+    
+    
+<!--    <li id="six" class="files"> 
+        <a href="#three">Nuestros Clientes<span>30</span></a> 
+        <ul class="sub-menu"> 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li> 
+        </ul> 
+    </li>-->
+    
+    
+<!--    <li id="seven" class="files">
+ 
+        <a href="#three">Recetario<span>30</span></a>
+ 
+        <ul class="sub-menu">
+ 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li>
+ 
+        </ul>
+ 
+    </li>-->
+    
+    
+<!--    <li id="eight" class="files">
+ 
+        <a href="#three">Cocinero&nbsp;Invitado<span>30</span></a>
+ 
+        <ul class="sub-menu">
+ 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li>
+ 
+        </ul>
+ 
+    </li>-->
+    
+    
+<!--    <li id="nine" class="files">
+ 
+        <a href="#three">Patagonia & Chefs<span>30</span></a>
+ 
+        <ul class="sub-menu">
+ 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li>
+ 
+        </ul>
+ 
+    </li>-->
+    
+    
+<!--    <li id="ten" class="files">
+ 
+        <a href="#three">Links&nbsp;de&nbsp;Interés<span>30</span></a>
+ 
+        <ul class="sub-menu">
+ 
+            <li><a href="#"><em>01</em>Sub Menu<span>3</span></a></li>
+ 
+        </ul>
+ 
+    </li>-->
+        
+ 
+</ul>
+
+    
+    
+    
+     <ul class="nav nav-tabs nav-stacked"> 
+        <li class="active"> 
+            <a href="#">Gastronoticias</a> 
+        </li> 
+        <li><a href="#">Nuestros Clientes</a></li> 
+        <li><a href="#">Recetario</a></li> 
+        <li><a href="#">Cocinero Invitado</a></li> 
+        <li><a href="#">Patagonia & Chefs</a></li> 
+        <li><a href="#">Links de Interés</a></li> 
+    </ul>
+    
+
+
+
+
+    <ul class="nav nav-list"><br/> 
+        <li class="nav-header"> 
+        Menu vertical 
+        </li> 
+        <li class="active"> 
+            <a href="#">Inicio</a> 
+        </li> 
+        <li><a href="#">Nosotros</a></li> 
+        
+            <li> <a href="#"><li class="icon-book"></li>Mision</a></li> 
+            <li> <a href="#"><li class="icon-book"></li>Vision</a></li> 
+            <li> <a href="#"><li class="icon-book"></li>Staff</a></li> 
+            <li><a href="#">Portafolio</a></li> 
+            <li><a href="#">Contacto</a></li> 
+        
+    </ul>
+    
+    
+    
+        
+    
+    
+    
 </div>
+    
+    
+<div id="derecha"class="span7">
+    <div class="span7" >
+    <?php echo $this->layout()->content; ?>
+        </div>    
+    
+    
+<!--<h3>Contenido</h3> -->
+<!--<br/> 
+<h1>Bienvenidos a nuestra pagina!</h1> 
+<p> 
+Esta Pagina ha sido maquetada con twitter bootstrap 
+</p> 
+<p><a class="btn btn-primary btn-large">Mas información</a></p> -->
+
+</div> 
+</div> 
+<div id=""class="row"> 
+<div id="footer" class="span12"> 
+<span>Todos los derechos reservados</span><br/><b>Casilla: 665. Puerto Varas. Fono: 0-56-65-330297. E-mail: contacto@saboresdelapatagonia.cl</b> 
+</div> 
+</div> 
+</div>  
+    
+    
 </body>
 </html>
 

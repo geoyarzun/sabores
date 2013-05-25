@@ -1,0 +1,90 @@
+<img src="img/sitio/cabecera.png" width="681" height="92"/> 
+
+
+<div id="banner">        
+                <?php echo $this->htmlFlash($this->baseUrl('/flash/banner.swf'),
+                array('width' => 560, 'height' => 92)
+                );
+                ?>
+            </div> 
+            
+            
+            
+            
+            
+            <ul id="menu">
+	                                        <li class="ui-state-disabled"><a href="#">Inicio</a></li>
+	                                        <li>
+	                                            <a href="#">Chef&nbsp;Leonardo&nbsp;Chacón</a>
+	                                            <ul>
+	                                                <li><a href="#">Publicaciones</a></li>
+	                                                <li><a href="#">Labor&nbsp;Asesora</a></li>
+	                                                <li><a href="#">Chef&nbsp;Ejecutivo</a></li>
+	                                                <li><a href="#">Eventos</a></li>
+	                                                <li><a href="#">Asesorías</a></li>
+	                                                <li><a href="#">Labor&nbsp;Docente</a></li>
+	                                            </ul>
+	                                        </li>
+	                                        <li>
+	                                            <a href="#">Consultores&nbsp;Gastronómicos</a>
+	                                            <ul>
+	                                                <li><a href="#">Asesorías</a></li>
+	                                                <li><a href="#">Recreación&nbsp;Cocina&nbsp;Chilena</a></li>
+	                                                <li><a href="#">Etapas</a></li>
+	                                                <li><a href="#">Otras&nbsp;Áreas</a></li>
+	                                                <li><a href="#">Servicios</a></li>
+	                                            </ul>
+	                                        </li>                                    
+	                                        <li><a href="#">Gastronoticias</a></li>
+	                                        <li>
+	                                        	<a href="#">Consultores&nbsp;Gastronómicos</a>
+	                                        	
+	                                        </li>
+	                                        	
+	                                        
+	                                        <li>
+	                                        	<a href="#">Productos</a>
+	                                        	
+	                                        </li>
+	                                        <li><a href="#">Cocina&nbsp;Regional&nbsp;Chilena</a></li>
+	                                        <li><a href="#">Nuestros Clientes</a></li>
+	                                        <li><a href="#">Recetario</a></li>
+	                                        <li><a href="#">Cocinero&nbsp;Invitado</a></li>
+	                                        <li><a href="#">Patagonia&AMP;Chefs</a></li>
+	                                        <li><a href="#">Links&nbsp;de&nbsp;Interés</a></li>
+	                                        <li><a href="#">Contacto</a></li>
+	                                        
+	    <!--                                    <li>
+	                                            <a href="#">Delphi</a>
+	                                                <ul>
+	                                                    <li class="ui-state-disabled"><a href="#">Ada</a></li>
+	                                                    <li><a href="#">Saarland</a></li>
+	                                                    <li><a href="#">Salzburg</a></li>
+	                                                </ul>
+	                                        </li>
+	                                        <li><a href="#">Saarland</a></li>
+	                                        <li>
+	                                            <a href="#">Salzburg</a>
+	                                            <ul>
+	                                            <li>
+	                                                <a href="#">Delphi</a>
+	                                                <ul>
+	                                                <li><a href="#">Ada</a></li>
+	                                                <li><a href="#">Saarland</a></li>
+	                                                <li><a href="#">Salzburg</a></li>
+	                                                </ul>
+	                                            </li>
+	                                            <li>
+	                                                <a href="#">Delphi</a>
+	                                                <ul>
+	                                                <li><a href="#">Ada</a></li>
+	                                                <li><a href="#">Saarland</a></li>
+	                                                <li><a href="#">Salzburg</a></li>
+	                                                </ul>
+	                                            </li>
+	                                            <li><a href="#">Perch</a></li>
+	                                            </ul>
+	                                        </li>
+	                                        <li class="ui-state-disabled"><a href="#">Amesville</a></li>-->
+	                                
+                            </ul> 
